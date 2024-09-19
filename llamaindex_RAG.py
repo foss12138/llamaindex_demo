@@ -22,12 +22,12 @@ llm = HuggingFaceLLM(
 Settings.llm = llm
 
 #从指定目录读取所有文档，并加载数据到内存中
-documents = SimpleDirectoryReader("/root/llamaindex_demo/data").load_data()
+documents = SimpleDirectoryReader("/root/llamaindex_demo/chaos_history").load_data()
 #创建一个VectorStoreIndex，并使用之前加载的文档来构建索引。
 # 此索引将文档转换为向量，并存储这些向量以便于快速检索。
 index = VectorStoreIndex.from_documents(documents)
 # 创建一个查询引擎，这个引擎可以接收查询并返回相关文档的响应。
 query_engine = index.as_query_engine()
-response = query_engine.query("xtuner是什么?")
+response = query_engine.query("混沌学的研究历史")
 
 print(response)

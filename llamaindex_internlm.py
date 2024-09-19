@@ -7,6 +7,6 @@ llm = HuggingFaceLLM(
     tokenizer_kwargs={"trust_remote_code":True}
 )
 
-rsp = llm.chat(messages=[ChatMessage(content="xtuner是什么？")])
+rsp = llm.chat(messages=[ChatMessage(content="混沌学的研究历史")])
 #print("test")
 print(rsp)
